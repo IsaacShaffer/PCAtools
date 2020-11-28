@@ -34,7 +34,8 @@ PCA <- function(data, scale = FALSE) {
     scaled_centered_data.mat <- t(apply(data.mat, 1, function(x){x-center.out}))
   }
   # Estimate spectral decomposition for centered (and scaled?)
-  # data
+  # data.
+  # TODO: Add rank limits
   svd_results.list <- svd(scaled_centered_data.mat)
   # Extract rotation matrix providied in prcomp results
   rotation <- svd_results.list$v
