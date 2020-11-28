@@ -13,7 +13,7 @@ PCA(data, scale = FALSE)
 }}
 
 \item{scale}{\itemize{
-\item If TRUE features are scaled AND centered. If FALSE features are only centered. (default: FALSE)
+\item If TRUE features are scaled AND centered. If FALSE features are only centered. default: FALSE
 }}
 }
 \value{
@@ -22,4 +22,7 @@ PCA(data, scale = FALSE)
 \description{
 A Principal Components Analysis tool
 based on single value decomposition
+}
+\examples{
+PCA.model <- PCA(iris[,1:4])
 }

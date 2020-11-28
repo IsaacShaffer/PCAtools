@@ -3,7 +3,7 @@
 \name{PCAReconstructionError}
 \alias{PCAReconstructionError}
 \title{Calculates reconstruction error for Principal Components
-Analysis (PCA) with output from stats::prcomp() or PCA() in this package.}
+Analysis -- PCA -- with output from stats::prcomp or PCA in this package.}
 \usage{
 PCAReconstructionError(data, mod.pca, max_components)
 }
@@ -25,5 +25,8 @@ PCAReconstructionError(data, mod.pca, max_components)
 }
 \description{
 Calculates reconstruction error for Principal Components
-Analysis (PCA) with output from stats::prcomp() or PCA() in this package.
+Analysis -- PCA -- with output from stats::prcomp or PCA in this package.
+}
+\examples{
+iris_re <- PCAReconstructionError(iris[,1:4], PCA(iris[,1:4]))
 }
