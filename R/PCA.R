@@ -1,6 +1,4 @@
-#' A Principal Components Analysis tool
-#' based on single value decomposition
-#'
+#' A Principal Components Analysis tool based on single value decomposition
 #'
 #' @param data - An N x P matrix of N observations on P features.
 #' @param scale - If TRUE features are scaled AND centered. If FALSE features are only centered. default: FALSE
