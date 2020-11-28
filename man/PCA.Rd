@@ -2,8 +2,7 @@
 % Please edit documentation in R/PCA.R
 \name{PCA}
 \alias{PCA}
-\title{A Principal Components Analysis tool
-based on single value decomposition}
+\title{A Principal Components Analysis tool based on single value decomposition}
 \usage{
 PCA(data, scale = FALSE)
 }
@@ -20,8 +19,7 @@ PCA(data, scale = FALSE)
 
 }
 \description{
-A Principal Components Analysis tool
-based on single value decomposition
+A Principal Components Analysis tool based on single value decomposition
 }
 \examples{
 PCA.model <- PCA(iris[,1:4])
