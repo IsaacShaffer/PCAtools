@@ -3,20 +3,21 @@
 #'
 #'
 #' @param data - An N x P matrix of N observations on P features.
-#' @param scale - If TRUE features are scaled AND centered. If FALSE features are only centered. (default: FALSE)
+#' @param scale - If TRUE features are scaled AND centered. If FALSE features are only centered. default: FALSE
 #'
 #' @return
 #' @export
 #'
 #' @examples
+#' PCA.model <- PCA(iris[,1:4])
 PCA <- function(data, scale = FALSE) {
+  # Coerce data.frame or data.table to matrix
+  # Use separate step for better trace back
   # A simple column sd function
   colSd <- function(data) {
     data.mat <- as.matrix(data)
-    return(apply(data.mat, 2, sd) )
+    return(apply(data.mat, 2, stats::sd) )
   }
-  # Coerce data.frame or data.table to matrix
-  # Use separate step for better trace back
   data.mat <- as.matrix(data)
   if (scale) {
     # Calculate scale vector

@@ -1,3 +1,3 @@
-test_that("multiplication works", {
-  expect_equal(2 * 2, 4)
+test_that("Reconstruction error works", {
+  expect_equal(floor(PCAReconstructionError(iris[,1:4], PCA(iris[,1:4]))[1,1]), 51)
 })

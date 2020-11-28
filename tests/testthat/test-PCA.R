@@ -1,3 +1,3 @@
-test_that("multiplication works", {
-  expect_equal(2*2, 4)
+test_that("PCA works", {
+  expect_equal(round(PCA(iris[,1:4])$x[1,1], 3), -2.684)
 })

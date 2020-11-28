@@ -1,5 +1,5 @@
 #' Calculates reconstruction error for Principal Components
-#' Analysis (PCA) with output from stats::prcomp() or PCA() in this package.
+#' Analysis -- PCA -- with output from stats::prcomp or PCA in this package.
 #'
 #' @param data - original data used to create PCA model
 #' @param mod.pca - a PCA or stats::prcomp model
@@ -9,8 +9,8 @@
 #' @export
 #'
 #' @examples
+#' iris_re <- PCAReconstructionError(iris[,1:4], PCA(iris[,1:4]))
 PCAReconstructionError <- function(data, mod.pca, max_components) {
-  require(data.table)
   if (missing(max_components)) {max_components <- ncol(mod.pca$rotation)}
   data.mat <- as.matrix(data)
 
@@ -40,7 +40,7 @@ PCAReconstructionError <- function(data, mod.pca, max_components) {
     fit.mat <- previous_fit.mat + PC.mat * mod.pca$x[, current_PC]
     # Calculate the Reconstruction Error as described in
     # Elements of Statistical Learning, Eq 14.50
-    RE_data.list[[paste(current_PC)]] <- data.table(
+    RE_data.list[[paste(current_PC)]] <- data.table::data.table(
       RE = sum((scaled_centered_data.mat - fit.mat)^2),
       Components = current_PC)
     # Save fit results for next iteration
